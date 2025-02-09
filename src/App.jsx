@@ -5,6 +5,7 @@ import "./App.css";
 import Navbar from './components/Navbar';
 import EmployeeList from './components/EmployeeList';
 import AddEmployee from './components/AddEmployee';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 
 function App(){
@@ -12,11 +13,11 @@ function App(){
     <>
     <BrowserRouter>
     <Navbar/>
-    <Routes>
-       <EmployeeList/>
-  <Route path="/AddEmployee" element={<AddEmployee/>}/>
-    <AddEmployee/>
-    </Routes>
+<Routes>
+    <Route index element={ <EmployeeList/> }/>
+    <Route path="/" element={ <EmployeeList/> }/>
+    <Route path="/add-employee" element={<AddEmployee/>}/>
+</Routes>
     </BrowserRouter>
     </>
   );
